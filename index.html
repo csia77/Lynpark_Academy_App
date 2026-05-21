@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lynpark Learning Centre — Better The Best</title>
+    <meta name="description" content="Lynpark Learning Centre is a leading primary school in Kenya offering CBC curriculum from PP1 to Grade 8. We develop all-round learners with strong character and excellence.">
+    <meta name="keywords" content="Lynpark Learning Centre, LLC, primary school Kenya, CBC curriculum, Better The Best">
+    <meta property="og:title" content="Lynpark Learning Centre — Better The Best">
+    <meta property="og:description" content="A leading centre of excellence developing all-round learners with strong character, a positive attitude with excellence.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+</head>
+<body>
+
+    <!-- ============================================
+         TOP BAR — Kenya flag accent + contact info
+    ============================================= -->
+    <div class="kenya-stripe" aria-hidden="true"></div>
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="top-bar-left">
+                <a href="tel:+254727445820" class="top-bar-link">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+254 727 445 820</span>
+                </a>
+                <a href="mailto:le_centre@yahoo.com" class="top-bar-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>le_centre@yahoo.com</span>
+                </a>
+            </div>
+            <div class="top-bar-right">
+                <a href="admissions.html" class="btn btn-sm btn-primary top-bar-cta">
+                    <i class="fas fa-user-graduate"></i>
+                    Apply for Admission
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         NAVIGATION
+    ============================================= -->
+    <nav id="navbar" class="navbar">
+        <div class="container navbar-inner">
+            <!-- Logo -->
+            <a href="index.html" class="navbar-logo">
+                <img src="assets/images/logo.png" alt="Lynpark Learning Centre Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-name">Lynpark</span>
+                    <span class="logo-tagline">Learning Centre</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item active">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="about.html" class="nav-link">
+                        About
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="about.html#mission">Mission & Vision</a></li>
+                        <li><a href="staff.html">Our Staff</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="academics.html" class="nav-link">Academics</a>
+                </li>
+                <li class="nav-item">
+                    <a href="admissions.html" class="nav-link">Admissions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="news.html" class="nav-link">News</a>
+                </li>
+                <li class="nav-item">
+                    <a href="events.html" class="nav-link">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <!-- Mobile Hamburger -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ============================================
+         HERO SLIDER
+    ============================================= -->
+    <section class="hero-slider" id="heroSlider" aria-label="Featured images">
+        <!-- Slide 1 -->
+        <div class="slide active" data-slide="0">
+            <div class="slide-bg" style="background-image: url('assets/images/students/school-assembly.jpg');"></div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content container">
+                <p class="slide-subtitle animate-on-scroll">Welcome to Lynpark Learning Centre</p>
+                <h1 class="slide-title animate-on-scroll">Better<br>The Best</h1>
+                <p class="slide-text animate-on-scroll">Developing all-round learners with strong character, a positive attitude with excellence.</p>
+                <a href="about.html" class="btn btn-primary btn-lg animate-on-scroll">
+                    Discover More
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" data-slide="1">
+            <div class="slide-bg" style="background-image: url('assets/images/students/students-uniform-1.jpg');"></div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content container">
+                <p class="slide-subtitle">Excellence in Education</p>
+                <h1 class="slide-title">Inspire.<br>Nurture.</h1>
+                <p class="slide-text">CBC curriculum from PP1 to Grade 8 — empowering every child to reach their full potential.</p>
+                <a href="academics.html" class="btn btn-primary btn-lg">
+                    Our Academics
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" data-slide="2">
+            <div class="slide-bg" style="background-image: url('assets/images/students/students-campus-1.jpg');"></div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content container">
+                <p class="slide-subtitle">Building Tomorrow's Leaders</p>
+                <h1 class="slide-title">Learn.<br>Grow.</h1>
+                <p class="slide-text">A vibrant community where every child discovers their talents and builds lifelong skills.</p>
+                <a href="admissions.html" class="btn btn-primary btn-lg">
+                    Enroll Today
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <button class="slider-prev" aria-label="Previous slide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-next" aria-label="Next slide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <!-- ============================================
+         WELCOME SECTION
+    ============================================= -->
+    <section class="section welcome-section" id="welcome">
+        <div class="container">
+            <div class="section-heading animate-on-scroll">
+                <span class="section-label">About Our School</span>
+                <h2>Welcome to <em>Lynpark Learning Centre</em></h2>
+                <div class="heading-line"></div>
+            </div>
+            <div class="welcome-grid">
+                <div class="welcome-text animate-on-scroll">
+                    <p class="lead-text">
+                        Lynpark Learning Centre (LLC) is a registered primary school under the Ministry of Education, Kenya. 
+                        Nestled in the heart of rural Kenya, we are committed to reaching the most vulnerable and needy 
+                        children, providing them with world-class education that builds character and excellence.
+                    </p>
+                    <p>
+                        Our dedicated team of educators delivers the Competency-Based Curriculum (CBC) from PP1 through 
+                        Grade 8, ensuring every learner develops the knowledge, skills, and values needed to thrive in 
+                        the modern world. At LLC, we believe every child deserves an opportunity to be the best they can be.
+                    </p>
+                    <a href="about.html" class="btn btn-outline">
+                        Learn Our Story
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="welcome-cards animate-on-scroll">
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To develop an all round learner with strong character, a positive attitude with excellence.</p>
+                    </div>
+                    <div class="vision-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>To be a leading centre of excellence that will reach the most vulnerable and needy child in rural area.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         STATISTICS COUNTER
+    ============================================= -->
+    <section class="section stats-section" id="stats">
+        <div class="stats-overlay"></div>
+        <div class="container">
+            <div class="stats-grid stagger-children">
+                <div class="stat-item animate-on-scroll">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="500">0</h3>
+                    <span class="stat-suffix">+</span>
+                    <p class="stat-label">Students Enrolled</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <div class="stat-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="30">0</h3>
+                    <span class="stat-suffix">+</span>
+                    <p class="stat-label">Dedicated Teachers</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="15">0</h3>
+                    <span class="stat-suffix">+</span>
+                    <p class="stat-label">Years of Excellence</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <div class="stat-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="2000">0</h3>
+                    <span class="stat-suffix">+</span>
+                    <p class="stat-label">Proud Graduates</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ACADEMIC PROGRAMS
+    ============================================= -->
+    <section class="section programs-section" id="programs">
+        <div class="container">
+            <div class="section-heading animate-on-scroll">
+                <span class="section-label">What We Offer</span>
+                <h2>Our Academic <em>Programs</em></h2>
+                <div class="heading-line"></div>
+                <p class="section-description">Comprehensive CBC curriculum designed to nurture every child's potential from Pre-Primary through Grade 8.</p>
+            </div>
+
+            <div class="programs-grid stagger-children">
+                <!-- Pre-Primary -->
+                <div class="program-card animate-on-scroll">
+                    <div class="program-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Pre-Primary</h3>
+                    <p class="program-level">PP1 & PP2</p>
+                    <p>A nurturing environment where young minds begin their educational journey through play-based learning, creativity, and foundational skills development.</p>
+                    <ul class="program-features">
+                        <li><i class="fas fa-check-circle"></i> Play-based learning</li>
+                        <li><i class="fas fa-check-circle"></i> Social skills development</li>
+                        <li><i class="fas fa-check-circle"></i> Creative arts & music</li>
+                    </ul>
+                    <a href="academics.html#pre-primary" class="btn btn-outline btn-sm">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Lower Primary -->
+                <div class="program-card animate-on-scroll">
+                    <div class="program-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h3>Lower Primary</h3>
+                    <p class="program-level">Grade 1 — 3</p>
+                    <p>Building strong foundations in literacy, numeracy, and life skills. Our learners explore the world through hands-on activities and guided discovery.</p>
+                    <ul class="program-features">
+                        <li><i class="fas fa-check-circle"></i> Literacy & numeracy</li>
+                        <li><i class="fas fa-check-circle"></i> Environmental activities</li>
+                        <li><i class="fas fa-check-circle"></i> Digital literacy</li>
+                    </ul>
+                    <a href="academics.html#lower-primary" class="btn btn-outline btn-sm">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Upper Primary -->
+                <div class="program-card animate-on-scroll">
+                    <div class="program-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Upper Primary</h3>
+                    <p class="program-level">Grade 4 — 6</p>
+                    <p>Expanding knowledge horizons with subject-based learning. Students develop critical thinking, teamwork, and leadership skills through diverse activities.</p>
+                    <ul class="program-features">
+                        <li><i class="fas fa-check-circle"></i> Science & technology</li>
+                        <li><i class="fas fa-check-circle"></i> Mathematics mastery</li>
+                        <li><i class="fas fa-check-circle"></i> Creative projects</li>
+                    </ul>
+                    <a href="academics.html#upper-primary" class="btn btn-outline btn-sm">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Junior Secondary -->
+                <div class="program-card animate-on-scroll">
+                    <div class="program-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Junior Secondary</h3>
+                    <p class="program-level">Grade 7 — 8</p>
+                    <p>Preparing learners for the next level with specialized subjects and career guidance. Students choose pathways aligned with their strengths and interests.</p>
+                    <ul class="program-features">
+                        <li><i class="fas fa-check-circle"></i> Career pathways</li>
+                        <li><i class="fas fa-check-circle"></i> STEM integration</li>
+                        <li><i class="fas fa-check-circle"></i> Community service</li>
+                    </ul>
+                    <a href="academics.html#junior-secondary" class="btn btn-outline btn-sm">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CORE VALUES
+    ============================================= -->
+    <section class="section values-section" id="values">
+        <div class="container">
+            <div class="section-heading animate-on-scroll">
+                <span class="section-label">What We Stand For</span>
+                <h2>Our Core <em>Values</em></h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="values-grid stagger-children">
+                <div class="value-item animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Excellence</h4>
+                    <p>Striving for the highest standards in everything we do — academically and beyond.</p>
+                </div>
+                <div class="value-item animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Integrity</h4>
+                    <p>Building character through honesty, responsibility, and moral uprightness.</p>
+                </div>
+                <div class="value-item animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h4>Discipline</h4>
+                    <p>Fostering self-control, respect, and commitment to doing what is right.</p>
+                </div>
+                <div class="value-item animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Teamwork</h4>
+                    <p>Working together to achieve common goals and supporting one another.</p>
+                </div>
+                <div class="value-item animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h4>Innovation</h4>
+                    <p>Embracing creativity and new ideas to solve problems and grow.</p>
+                </div>
+                <div class="value-item animate-on-scroll">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4>Compassion</h4>
+                    <p>Caring for every child, especially the most vulnerable and needy in our community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         LATEST NEWS (will be dynamic from Firebase)
+    ============================================= -->
+    <section class="section news-section" id="latestNews">
+        <div class="container">
+            <div class="section-heading animate-on-scroll">
+                <span class="section-label">Stay Informed</span>
+                <h2>Latest <em>News & Updates</em></h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="news-grid stagger-children" id="newsGrid">
+                <!-- News Card 1 (placeholder — will be replaced by Firebase data) -->
+                <article class="card news-card animate-on-scroll">
+                    <div class="card-image">
+                        <img src="assets/images/students/school-assembly.jpg" alt="School Opening Day" loading="lazy">
+                        <span class="badge badge-primary">Announcement</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span><i class="far fa-calendar-alt"></i> May 15, 2026</span>
+                        </div>
+                        <h3 class="card-title">Term 2 Opening Day — May 2026</h3>
+                        <p class="card-text">We are delighted to welcome all our learners back for an exciting Term 2. Classes resume on Monday with special opening day activities planned for all levels.</p>
+                        <a href="news.html" class="card-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- News Card 2 -->
+                <article class="card news-card animate-on-scroll">
+                    <div class="card-image">
+                        <img src="assets/images/students/students-uniform-2.jpg" alt="Academic Excellence" loading="lazy">
+                        <span class="badge badge-primary">Academic</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span><i class="far fa-calendar-alt"></i> April 28, 2026</span>
+                        </div>
+                        <h3 class="card-title">Outstanding KCPE Results — Congratulations!</h3>
+                        <p class="card-text">Our Grade 6 learners have achieved remarkable results in the national assessments, with several students scoring above 350 marks. We celebrate their hard work!</p>
+                        <a href="news.html" class="card-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- News Card 3 -->
+                <article class="card news-card animate-on-scroll">
+                    <div class="card-image">
+                        <img src="assets/images/students/students-campus-1.jpg" alt="Sports Day" loading="lazy">
+                        <span class="badge badge-primary">Sports</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span><i class="far fa-calendar-alt"></i> April 10, 2026</span>
+                        </div>
+                        <h3 class="card-title">Annual Sports Day — A Day of Champions</h3>
+                        <p class="card-text">This year's sports day was a spectacular event filled with energy and teamwork. Our athletes competed in track, field, football, and traditional games.</p>
+                        <a href="news.html" class="card-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center" style="margin-top: var(--space-xl);">
+                <a href="news.html" class="btn btn-outline">
+                    View All News
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CALL TO ACTION
+    ============================================= -->
+    <section class="section cta-section" id="cta">
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2>Give Your Child the <em>Best Start</em> in Life</h2>
+                <p>Enroll your child at Lynpark Learning Centre and watch them grow into a confident, capable, and compassionate leader of tomorrow.</p>
+                <div class="cta-buttons">
+                    <a href="admissions.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-user-plus"></i>
+                        Apply for Admission
+                    </a>
+                    <a href="contact.html" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-phone-alt"></i>
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+    ============================================= -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: About -->
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="LLC Logo">
+                        <div>
+                            <h3>Lynpark Learning Centre</h3>
+                            <span class="footer-motto">"Better The Best"</span>
+                        </div>
+                    </div>
+                    <p>A registered Ministry of Education primary school, committed to developing all-round learners with strong character and excellence.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="academics.html"><i class="fas fa-chevron-right"></i> Academics</a></li>
+                        <li><a href="admissions.html"><i class="fas fa-chevron-right"></i> Admissions</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="news.html"><i class="fas fa-chevron-right"></i> News</a></li>
+                        <li><a href="events.html"><i class="fas fa-chevron-right"></i> Events</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Academic Levels -->
+                <div class="footer-col">
+                    <h4>Our Programs</h4>
+                    <ul class="footer-links">
+                        <li><a href="academics.html#pre-primary"><i class="fas fa-chevron-right"></i> Pre-Primary (PP1–PP2)</a></li>
+                        <li><a href="academics.html#lower-primary"><i class="fas fa-chevron-right"></i> Lower Primary (Gr 1–3)</a></li>
+                        <li><a href="academics.html#upper-primary"><i class="fas fa-chevron-right"></i> Upper Primary (Gr 4–6)</a></li>
+                        <li><a href="academics.html#junior-secondary"><i class="fas fa-chevron-right"></i> Junior Secondary (Gr 7–8)</a></li>
+                        <li><a href="academics.html"><i class="fas fa-chevron-right"></i> Co-Curricular Activities</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>P.O. Box 669<br>Nyamira, Kenya</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+254727445820">+254 727 445 820</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:le_centre@yahoo.com">le_centre@yahoo.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon — Fri: 7:00 AM — 5:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>&copy; 2026 Lynpark Learning Centre. All Rights Reserved.</p>
+                <p>Registered under the Ministry of Education, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

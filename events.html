@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events — Lynpark Learning Centre</title>
+    <meta name="description" content="Stay updated with upcoming and past events at Lynpark Learning Centre — Parents Day, Sports Day, Cultural Day, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+    <style>
+        .event-tabs { display: flex; justify-content: center; gap: var(--space-md); margin-bottom: var(--space-2xl); }
+        .event-tab { padding: 0.75rem 2rem; font-family: var(--font-body); font-size: var(--text-base); font-weight: var(--weight-semi); border: 2px solid var(--border-color); background: var(--white); color: var(--text-dark); border-radius: var(--radius-pill); cursor: pointer; transition: all var(--transition-normal); }
+        .event-tab.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
+        .event-tab:hover:not(.active) { border-color: var(--primary); color: var(--primary); }
+        .events-list { display: flex; flex-direction: column; gap: var(--space-lg); }
+        .event-card { display: flex; gap: var(--space-xl); padding: var(--space-xl); background: var(--white); border-radius: var(--radius-xl); box-shadow: var(--shadow-card); transition: all var(--transition-normal); border-left: 5px solid var(--primary); }
+        .event-card:hover { transform: translateX(8px); box-shadow: var(--shadow-card-hover); }
+        .event-date { min-width: 80px; text-align: center; flex-shrink: 0; }
+        .event-day { font-family: var(--font-heading); font-size: var(--text-3xl); font-weight: var(--weight-bold); color: var(--primary); line-height: 1; }
+        .event-month { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: var(--tracking-widest); color: var(--text-muted); font-weight: var(--weight-semi); }
+        .event-info h3 { font-family: var(--font-heading); font-size: var(--text-xl); color: var(--secondary-dark); margin-bottom: var(--space-xs); }
+        .event-info p { font-size: var(--text-sm); color: var(--text-muted); line-height: var(--leading-relaxed); margin-bottom: var(--space-sm); }
+        .event-meta { display: flex; gap: var(--space-lg); flex-wrap: wrap; }
+        .event-meta span { font-size: var(--text-xs); color: var(--text-muted); display: flex; align-items: center; gap: var(--space-2xs); }
+        .event-meta i { color: var(--primary); }
+        .past-events { display: none; }
+        .past-events.active { display: flex; }
+        .upcoming-events.active { display: flex; }
+        .event-card.past { border-left-color: var(--text-muted); opacity: 0.85; }
+        .event-card.past .event-day { color: var(--text-muted); }
+        @media (max-width: 768px) { .event-card { flex-direction: column; gap: var(--space-md); } .event-date { display: flex; align-items: center; gap: var(--space-sm); } }
+    </style>
+</head>
+<body>
+    <div class="kenya-stripe" aria-hidden="true"></div>
+    <div class="top-bar"><div class="container top-bar-inner"><div class="top-bar-left"><a href="tel:+254727445820" class="top-bar-link"><i class="fas fa-phone-alt"></i><span>+254 727 445 820</span></a><a href="mailto:le_centre@yahoo.com" class="top-bar-link"><i class="fas fa-envelope"></i><span>le_centre@yahoo.com</span></a></div><div class="top-bar-right"><a href="admissions.html" class="btn btn-sm btn-primary top-bar-cta"><i class="fas fa-user-graduate"></i> Apply for Admission</a></div></div></div>
+    <nav id="navbar" class="navbar scrolled"><div class="container navbar-inner"><a href="index.html" class="navbar-logo"><img src="assets/images/logo.png" alt="LLC Logo" class="logo-img"><div class="logo-text"><span class="logo-name">Lynpark</span><span class="logo-tagline">Learning Centre</span></div></a><ul class="nav-menu" id="navMenu"><li class="nav-item"><a href="index.html" class="nav-link">Home</a></li><li class="nav-item has-dropdown"><a href="about.html" class="nav-link">About <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="about.html">Our Story</a></li><li><a href="about.html#mission">Mission & Vision</a></li><li><a href="staff.html">Our Staff</a></li></ul></li><li class="nav-item"><a href="academics.html" class="nav-link">Academics</a></li><li class="nav-item"><a href="admissions.html" class="nav-link">Admissions</a></li><li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li><li class="nav-item"><a href="news.html" class="nav-link">News</a></li><li class="nav-item active"><a href="events.html" class="nav-link">Events</a></li><li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li></ul><button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button></div></nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <section class="page-hero"><div class="container"><h1>Events Calendar</h1><nav class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Events</span></nav></div></section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-heading animate-on-scroll"><span class="section-label">What's Happening</span><h2>School <em>Events</em></h2><div class="heading-line"></div></div>
+
+            <div class="event-tabs">
+                <button class="event-tab active" onclick="showEvents('upcoming')">Upcoming Events</button>
+                <button class="event-tab" onclick="showEvents('past')">Past Events</button>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div class="events-list upcoming-events active" id="upcomingEvents">
+                <div class="event-card animate-on-scroll">
+                    <div class="event-date"><span class="event-day">28</span><span class="event-month">May</span></div>
+                    <div class="event-info"><h3>Parents Day</h3><p>Join us for our annual Parents Day celebration. Parents and guardians are invited to visit classrooms, view their children's work, and meet with teachers.</p><div class="event-meta"><span><i class="fas fa-clock"></i> 8:00 AM — 2:00 PM</span><span><i class="fas fa-map-marker-alt"></i> School Assembly Ground</span></div></div>
+                </div>
+                <div class="event-card animate-on-scroll">
+                    <div class="event-date"><span class="event-day">14</span><span class="event-month">Jun</span></div>
+                    <div class="event-info"><h3>Inter-Class Sports Day</h3><p>A day of friendly competition! Classes compete in athletics, football, netball, and fun games. All students participate and earn house points.</p><div class="event-meta"><span><i class="fas fa-clock"></i> 7:30 AM — 4:00 PM</span><span><i class="fas fa-map-marker-alt"></i> School Playing Field</span></div></div>
+                </div>
+                <div class="event-card animate-on-scroll">
+                    <div class="event-date"><span class="event-day">05</span><span class="event-month">Jul</span></div>
+                    <div class="event-info"><h3>Cultural Day Celebration</h3><p>Celebrating Kenya's rich cultural diversity through music, dance, traditional food, and dress. Students showcase different communities and their heritage.</p><div class="event-meta"><span><i class="fas fa-clock"></i> 9:00 AM — 3:00 PM</span><span><i class="fas fa-map-marker-alt"></i> School Hall</span></div></div>
+                </div>
+                <div class="event-card animate-on-scroll">
+                    <div class="event-date"><span class="event-day">18</span><span class="event-month">Jul</span></div>
+                    <div class="event-info"><h3>Science Fair & Exhibition</h3><p>Students present their science projects and experiments. Parents and community members are welcome to explore the innovative work of our young scientists.</p><div class="event-meta"><span><i class="fas fa-clock"></i> 10:00 AM — 1:00 PM</span><span><i class="fas fa-map-marker-alt"></i> Science Laboratory</span></div></div>
+                </div>
+                <div class="event-card animate-on-scroll">
+                    <div class="event-date"><span class="event-day">26</span><span class="event-month">Jul</span></div>
+                    <div class="event-info"><h3>Term 2 Closing Ceremony</h3><p>End of term assembly with awards, performances, and report card distribution. Parents are invited to collect reports and meet with teachers.</p><div class="event-meta"><span><i class="fas fa-clock"></i> 9:00 AM — 12:00 PM</span><span><i class="fas fa-map-marker-alt"></i> School Assembly Ground</span></div></div>
+                </div>
+            </div>
+
+            <!-- Past Events -->
+            <div class="events-list past-events" id="pastEvents">
+                <div class="event-card past animate-on-scroll">
+                    <div class="event-date"><span class="event-day">10</span><span class="event-month">Apr</span></div>
+                    <div class="event-info"><h3>Annual Sports Day</h3><p>A spectacular day of athletics and team sports. Our students showcased their talents in running, jumping, and ball games. Congratulations to all participants!</p><div class="event-meta"><span><i class="fas fa-clock"></i> 7:30 AM — 4:00 PM</span><span><i class="fas fa-map-marker-alt"></i> School Playing Field</span></div></div>
+                </div>
+                <div class="event-card past animate-on-scroll">
+                    <div class="event-date"><span class="event-day">22</span><span class="event-month">Mar</span></div>
+                    <div class="event-info"><h3>World Water Day Assembly</h3><p>Students learned about water conservation through presentations, poems, and a tree planting exercise around the school compound.</p><div class="event-meta"><span><i class="fas fa-clock"></i> 8:00 AM — 10:00 AM</span><span><i class="fas fa-map-marker-alt"></i> School Assembly Ground</span></div></div>
+                </div>
+                <div class="event-card past animate-on-scroll">
+                    <div class="event-date"><span class="event-day">14</span><span class="event-month">Feb</span></div>
+                    <div class="event-info"><h3>Term 1 Opening Day</h3><p>We welcomed 50 new learners to the LLC family! The day included orientation activities, classroom tours, and a welcome assembly for all students.</p><div class="event-meta"><span><i class="fas fa-clock"></i> 7:00 AM — 12:00 PM</span><span><i class="fas fa-map-marker-alt"></i> Entire Campus</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><div class="footer-logo"><img src="assets/images/logo.png" alt="LLC Logo"><div><h3>Lynpark Learning Centre</h3><span class="footer-motto">"Better The Best"</span></div></div><p>A registered Ministry of Education primary school, committed to developing all-round learners with strong character and excellence.</p><div class="footer-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div><div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li><li><a href="academics.html"><i class="fas fa-chevron-right"></i> Academics</a></li><li><a href="admissions.html"><i class="fas fa-chevron-right"></i> Admissions</a></li><li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li><li><a href="news.html"><i class="fas fa-chevron-right"></i> News</a></li><li><a href="events.html"><i class="fas fa-chevron-right"></i> Events</a></li></ul></div><div class="footer-col"><h4>Our Programs</h4><ul class="footer-links"><li><a href="academics.html#pre-primary"><i class="fas fa-chevron-right"></i> Pre-Primary (PP1–PP2)</a></li><li><a href="academics.html#lower-primary"><i class="fas fa-chevron-right"></i> Lower Primary (Gr 1–3)</a></li><li><a href="academics.html#upper-primary"><i class="fas fa-chevron-right"></i> Upper Primary (Gr 4–6)</a></li><li><a href="academics.html#junior-secondary"><i class="fas fa-chevron-right"></i> Junior Secondary (Gr 7–8)</a></li></ul></div><div class="footer-col"><h4>Contact Us</h4><ul class="footer-contact"><li><i class="fas fa-map-marker-alt"></i><span>P.O. Box 669<br>Nyamira, Kenya</span></li><li><i class="fas fa-phone-alt"></i><a href="tel:+254727445820">+254 727 445 820</a></li><li><i class="fas fa-envelope"></i><a href="mailto:le_centre@yahoo.com">le_centre@yahoo.com</a></li><li><i class="fas fa-clock"></i><span>Mon — Fri: 7:00 AM — 5:00 PM</span></li></ul></div></div></div><div class="footer-bottom"><div class="container footer-bottom-inner"><p>&copy; 2026 Lynpark Learning Centre. All Rights Reserved.</p><p>Registered under the Ministry of Education, Kenya</p></div></div></footer>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script>
+        // Simple tab toggle for events
+        function showEvents(type) {
+            document.querySelectorAll('.event-tab').forEach(t => t.classList.remove('active'));
+            document.querySelector(`.event-tab[onclick="showEvents('${type}')"]`).classList.add('active');
+            document.getElementById('upcomingEvents').classList.toggle('active', type === 'upcoming');
+            document.getElementById('pastEvents').classList.toggle('active', type === 'past');
+        }
+    </script>
+</body>
+</html>

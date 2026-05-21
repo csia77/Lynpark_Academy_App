@@ -1,0 +1,377 @@
+/* ============================================================
+   LYNPARK LEARNING CENTRE — Base Styles & Reset
+   ============================================================
+   Modern CSS reset, Google Fonts, and foundational element
+   styles. All sizing is mobile-first with clamp() for fluidity.
+   ============================================================ */
+
+/* --------------------------------------------------------
+   GOOGLE FONTS
+   Montserrat 300-700 (body)  |  PT Serif 400,700 (headings)
+   -------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+/* ============================================================
+   MODERN CSS RESET
+   Based on Andy Bell's Modern Reset + Josh Comeau additions
+   ============================================================ */
+
+/* Box sizing — border-box everywhere */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margins & paddings */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font-size inflation on mobile */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Smooth scrolling (respects user preference) */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--text-dark);
+  background-color: var(--bg-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Remove list styles for ul/ol with a role (nav lists, etc.) */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Remove default list styling */
+ul, ol {
+  list-style: none;
+}
+
+/* Content lists get their bullets back */
+.content ul,
+.content ol {
+  list-style: revert;
+  padding-left: 1.5em;
+}
+
+.content ul {
+  list-style-type: disc;
+}
+
+.content ol {
+  list-style-type: decimal;
+}
+
+.content li + li {
+  margin-top: var(--space-xs);
+}
+
+/* Make images & media easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Remove default button styling */
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Avoid text overflow */
+p,
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Remove anchor underline by default, style later */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Table reset */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove fieldset styling */
+fieldset {
+  border: none;
+}
+
+/* ============================================================
+   TYPOGRAPHY — Headings
+   PT Serif for all headings, responsive clamp sizes
+   ============================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--secondary-dark);
+}
+
+h1 {
+  font-size: var(--text-5xl);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+}
+
+h3 {
+  font-size: var(--text-3xl);
+}
+
+h4 {
+  font-size: var(--text-2xl);
+}
+
+h5 {
+  font-size: var(--text-xl);
+}
+
+h6 {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semi);
+}
+
+
+/* ============================================================
+   TYPOGRAPHY — Body Text
+   ============================================================ */
+
+p {
+  margin-bottom: var(--space-md);
+  line-height: var(--leading-normal);
+  color: var(--text-dark);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Lead / intro paragraph */
+.lead {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--text-muted);
+  font-weight: var(--weight-light);
+}
+
+
+/* ============================================================
+   TYPOGRAPHY — Links
+   ============================================================ */
+
+a {
+  color: var(--primary);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Text links in body content */
+.content a,
+.text-link {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: rgba(230, 81, 0, 0.3);
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast),
+              text-decoration-color var(--transition-fast);
+}
+
+.content a:hover,
+.text-link:hover {
+  color: var(--primary-dark);
+  text-decoration-color: var(--primary-dark);
+}
+
+
+/* ============================================================
+   SELECTION COLORS
+   ============================================================ */
+
+::selection {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+::-moz-selection {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+
+/* ============================================================
+   CUSTOM SCROLLBAR (Webkit)
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-section);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--bg-section);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-light) var(--bg-section);
+}
+
+
+/* ============================================================
+   FOCUS & ACCESSIBILITY
+   ============================================================ */
+
+/* Skip-to-content link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-md);
+  z-index: var(--z-top);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--primary);
+  color: var(--white);
+  font-weight: var(--weight-semi);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ============================================================
+   MISC BASE
+   ============================================================ */
+
+/* Horizontal rule */
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: var(--space-xl) 0;
+}
+
+/* Strong / bold */
+strong, b {
+  font-weight: var(--weight-semi);
+}
+
+/* Small text */
+small,
+.small {
+  font-size: var(--text-sm);
+}
+
+/* Block-quote */
+blockquote {
+  border-left: 4px solid var(--primary);
+  padding: var(--space-md) var(--space-lg);
+  margin: var(--space-lg) 0;
+  background: var(--primary-bg);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--text-dark);
+}
+
+blockquote cite {
+  display: block;
+  margin-top: var(--space-sm);
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

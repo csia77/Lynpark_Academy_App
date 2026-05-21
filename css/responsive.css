@@ -1,0 +1,390 @@
+/* ============================================================
+   LYNPARK LEARNING CENTRE — Responsive Styles
+   ============================================================
+   Mobile-first responsive breakpoints.
+   
+   Breakpoints:
+     480px  — large phones
+     768px  — tablets
+     1024px — desktops
+     1200px — wide desktops
+   ============================================================ */
+
+
+/* ============================================================
+   MOBILE-ONLY OVERRIDES (< 1024px)
+   Hamburger menu, stacked layouts, touch targets
+   ============================================================ */
+
+/* Mid-desktop: tighten nav spacing to prevent overlap */
+@media (min-width: 1024px) and (max-width: 1280px) {
+    .nav-link {
+        padding: 0.5rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .logo-name {
+        font-size: 1rem;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+
+    .navbar.scrolled .logo-img {
+        height: 36px;
+    }
+}
+
+@media (max-width: 1023px) {
+
+    /* --- Hamburger visible --- */
+    .hamburger {
+        display: flex;
+    }
+
+    /* --- Mobile Navigation Panel --- */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: min(320px, 85vw);
+        background: var(--white);
+        flex-direction: column;
+        align-items: stretch;
+        padding: calc(var(--nav-height) + var(--space-xl)) var(--space-lg) var(--space-lg);
+        box-shadow: var(--shadow-xl);
+        transform: translateX(100%);
+        transition: transform var(--transition-normal);
+        z-index: var(--z-overlay);
+        overflow-y: auto;
+        gap: 0;
+    }
+
+    .nav-open .nav-menu {
+        transform: translateX(0);
+    }
+
+    /* Force scrolled styles on mobile nav */
+    .nav-open .hamburger-line {
+        background: var(--secondary-dark);
+    }
+
+    /* Mobile nav links */
+    .nav-link {
+        padding: var(--space-md) var(--space-sm);
+        color: var(--text-dark);
+        font-size: var(--text-base);
+        border-bottom: 1px solid var(--border-light);
+        border-radius: 0;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Dropdown becomes accordion on mobile */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-normal);
+        background: var(--bg-section);
+    }
+
+    .nav-item.has-dropdown.dropdown-open .dropdown-menu {
+        max-height: 500px;
+    }
+
+    .dropdown-menu li a {
+        padding: var(--space-sm) var(--space-lg);
+        border-bottom: 1px solid var(--border-light);
+        border-radius: 0;
+    }
+
+    /* --- Top Bar: compact on mobile --- */
+    .top-bar-left {
+        display: none;
+    }
+
+    .top-bar-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .top-bar-inner {
+        justify-content: center;
+    }
+
+    /* Navbar: on mobile, ensure it doesn't overlap */
+    .navbar {
+        top: 0;
+    }
+
+    .navbar.scrolled {
+        top: 0;
+    }
+
+    /* --- Hero Slider adjustments --- */
+    .hero-slider {
+        min-height: 70vh;
+    }
+
+    .slide-title {
+        font-size: var(--text-3xl);
+    }
+
+    .slide-text {
+        font-size: var(--text-base);
+    }
+
+    .slider-prev,
+    .slider-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .slider-prev { left: var(--space-sm); }
+    .slider-next { right: var(--space-sm); }
+
+    /* --- Welcome Section: stack --- */
+    .welcome-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    /* --- Stats: 2-col --- */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+
+    .stat-item::after {
+        display: none;
+    }
+
+    /* --- Programs: 2-col on tablet --- */
+    .programs-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+
+    /* --- Values: 2-col --- */
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* --- News: 2-col on tablet --- */
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* --- Footer: 2-col --- */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-xl);
+    }
+
+    .footer-bottom-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* --- CTA buttons stack --- */
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* ============================================================
+   SMALL MOBILE (< 480px)
+   ============================================================ */
+
+@media (max-width: 479px) {
+
+    /* Hero: even more compact */
+    .hero-slider {
+        min-height: 60vh;
+    }
+
+    .slide-title {
+        font-size: var(--text-2xl);
+    }
+
+    .slide-subtitle {
+        font-size: var(--text-xs);
+    }
+
+    .slide-text {
+        font-size: var(--text-sm);
+    }
+
+    /* Hide hero arrows on very small screens (use swipe) */
+    .slider-prev,
+    .slider-next {
+        display: none;
+    }
+
+    /* Stack all grids to single column */
+    .stats-grid,
+    .programs-grid,
+    .values-grid,
+    .news-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stats: reduce padding */
+    .stat-item {
+        padding: var(--space-md);
+    }
+
+    .stat-number {
+        font-size: var(--text-3xl);
+    }
+
+    /* CTA buttons: full width */
+    .cta-buttons .btn {
+        width: 100%;
+    }
+
+    /* Page hero: shorter */
+    .page-hero {
+        height: 220px;
+    }
+}
+
+
+/* ============================================================
+   TOUCH-FRIENDLY TAP TARGETS
+   Ensure minimum 44px for all interactive elements on touch
+   ============================================================ */
+
+@media (pointer: coarse) {
+
+    .nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown-menu li a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-links a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .slider-dot {
+        width: 16px;
+        height: 16px;
+    }
+
+    .btn {
+        min-height: 44px;
+    }
+
+    .btn-sm {
+        min-height: 36px;
+    }
+}
+
+
+/* ============================================================
+   HOVER-ONLY INTERACTIONS
+   Disable hover effects on touch to prevent "sticky hover"
+   ============================================================ */
+
+@media (hover: none) {
+
+    .card:hover {
+        transform: none;
+        box-shadow: var(--shadow-card);
+    }
+
+    .card:hover .card-image img {
+        transform: none;
+    }
+
+    .program-card:hover {
+        transform: none;
+    }
+
+    .value-item:hover {
+        transform: none;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .value-item:hover .value-icon {
+        background: var(--primary-bg);
+    }
+
+    .value-item:hover .value-icon i {
+        color: var(--primary);
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .btn-outline:hover {
+        transform: none;
+    }
+}
+
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+
+@media print {
+
+    *,
+    *::before,
+    *::after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    .kenya-stripe,
+    .top-bar,
+    .navbar,
+    .hero-slider,
+    .footer,
+    .back-to-top,
+    .cta-section,
+    .nav-overlay {
+        display: none !important;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    h2, h3 {
+        page-break-after: avoid;
+    }
+}
