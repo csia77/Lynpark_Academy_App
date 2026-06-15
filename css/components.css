@@ -1388,3 +1388,276 @@
 .breadcrumb span {
     color: rgba(255, 255, 255, 0.5);
 }
+
+/* ============================================================
+   GREEN ACCENT ENHANCEMENTS
+   ============================================================ */
+
+/* Heading line — green gradient accent */
+.heading-line {
+  background: linear-gradient(90deg, var(--primary), var(--green-accent), var(--accent));
+}
+
+/* Stat icons — green tint */
+.stat-icon {
+  background: rgba(0, 200, 83, 0.15);
+}
+
+.stat-icon i {
+  color: var(--green-light);
+}
+
+/* Value cards — green hover border */
+.value-item:hover {
+  border-color: var(--green-accent);
+}
+
+/* Program card — green top border on hover */
+.program-card:hover {
+  border-top-color: var(--green-accent);
+}
+
+/* Footer social — green glow on hover */
+.footer-social a:hover {
+  box-shadow: var(--green-glow);
+  color: var(--green-accent);
+}
+
+/* Success badge accent */
+.btn-primary:active {
+  box-shadow: 0 0 0 3px rgba(0, 200, 83, 0.3);
+}
+
+/* Kenya stripe — add green pop */
+.kenya-stripe {
+  background: linear-gradient(
+    to right,
+    var(--kenya-black) 0%,
+    var(--kenya-black) 25%,
+    var(--kenya-red) 25%,
+    var(--kenya-red) 50%,
+    var(--green-accent) 50%,
+    var(--green-accent) 75%,
+    var(--kenya-black) 75%
+  );
+}
+
+/* Filter buttons — green active state */
+.filter-btn.active {
+  background: var(--green-accent);
+  color: var(--white);
+  border-color: var(--green-accent);
+}
+
+/* Card hover — subtle green border glow */
+.card:hover {
+  border-bottom: 3px solid var(--green-accent);
+}
+
+/* Social icons — disabled / coming-soon state */
+.footer-social .social-disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+  color: var(--text-muted);
+}
+
+.footer-social .social-disabled:hover {
+  box-shadow: none;
+  transform: none;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   DARK MODE — Component Overrides
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+
+  /* Navbar scrolled state */
+  .navbar.scrolled {
+    background: rgba(18, 18, 18, 0.97);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .navbar.scrolled .nav-link {
+    color: var(--text-dark);
+  }
+
+  .navbar.scrolled .nav-item.active .nav-link,
+  .navbar.scrolled .nav-link:hover {
+    color: var(--primary-light);
+    background: var(--primary-bg);
+  }
+
+  .navbar.scrolled .logo-name {
+    color: #E8E8E8;
+  }
+
+  .navbar.scrolled .logo-tagline {
+    color: var(--text-muted);
+  }
+
+  .navbar.scrolled .hamburger-line {
+    background: #E8E8E8;
+  }
+
+  /* Top bar */
+  .top-bar {
+    background: #0D0D1A;
+  }
+
+  /* Dropdown menus */
+  .dropdown-menu {
+    background: #1E1E2E;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  .dropdown-menu li a {
+    color: var(--text-dark);
+  }
+
+  .dropdown-menu li a:hover {
+    color: var(--primary-light);
+    background: var(--primary-bg);
+  }
+
+  /* Page hero */
+  .page-hero {
+    background: linear-gradient(135deg, #0D0D1A, #16213E);
+  }
+
+  /* Cards */
+  .mission-card,
+  .vision-card {
+    background: #1E1E2E;
+    box-shadow: var(--shadow-card);
+  }
+
+  .mission-card h3,
+  .vision-card h3 {
+    color: #E8E8E8;
+  }
+
+  /* Program cards */
+  .program-card {
+    background: #1E1E2E;
+  }
+
+  .program-card::before {
+    background: linear-gradient(180deg, rgba(230, 81, 0, 0.1) 0%, transparent 30%);
+  }
+
+  /* Value items */
+  .value-item {
+    background: #1E1E2E;
+  }
+
+  /* News / generic cards */
+  .card {
+    background: #1E1E2E;
+  }
+
+  .card-content h3 {
+    color: #E8E8E8;
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--footer-bg);
+  }
+
+  .footer-bottom {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  /* Contact form */
+  .contact-form {
+    background: #1E1E2E;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    background: #2D2D44;
+    border-color: #3D3D5C;
+    color: #E8E8E8;
+  }
+
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    background: #2D2D44;
+    border-color: var(--primary);
+  }
+
+  .form-group label {
+    color: #C0C0D0;
+  }
+
+  /* Info cards */
+  .info-card {
+    background: #1E1E2E;
+  }
+
+  .info-card h4 {
+    color: #E8E8E8;
+  }
+
+  /* Section headings */
+  .section-heading h2 {
+    color: #E8E8E8;
+  }
+
+  .section-label {
+    color: var(--primary-light);
+  }
+
+  /* Mobile nav panel */
+  .nav-menu {
+    background: #1E1E2E;
+  }
+
+  .nav-link {
+    color: #E8E8E8;
+    border-bottom-color: #2D3748;
+  }
+
+  /* Gallery overlay */
+  .gallery-overlay {
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  /* Map container */
+  .map-container {
+    background: #1E1E2E;
+    border-color: #2D3748;
+  }
+
+  /* Welcome text */
+  .lead-text {
+    color: var(--text-dark);
+  }
+
+  .welcome-text p {
+    color: var(--text-muted);
+  }
+
+  /* Back to top button */
+  #backToTop {
+    background: #1E1E2E;
+    border-color: #2D3748;
+    color: var(--primary-light);
+  }
+
+  #backToTop:hover {
+    background: var(--primary);
+    color: var(--white);
+  }
+
+  /* Stats section uses own gradient so it works in both modes */
+
+  /* Toast */
+  .toast {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+}

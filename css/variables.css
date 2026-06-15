@@ -220,3 +220,65 @@
   --input-border:   var(--border-color);
   --input-focus:    var(--primary);
 }
+
+/* --------------------------------------------------------
+   GREEN ACCENT TOKENS
+   -------------------------------------------------------- */
+:root {
+  --green-accent:   #00C853;
+  --green-light:    #69F0AE;
+  --green-dark:     #00891E;
+  --green-bg:       #E8F5E9;
+  --green-glow:     0 0 12px rgba(0, 200, 83, 0.3);
+}
+
+/* ============================================================
+   DARK MODE — System Preference
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Backgrounds */
+    --bg-cream:       #121212;
+    --bg-section:     #1A1A2E;
+    --white:          #1E1E2E;
+
+    /* Text */
+    --text-dark:      #E8E8E8;
+    --text-muted:     #A0AEC0;
+    --text-light:     #718096;
+    --text-on-dark:   rgba(255, 255, 255, 0.9);
+
+    /* Borders */
+    --border-color:   #2D3748;
+    --border-light:   #1E2A3A;
+
+    /* Overlays */
+    --overlay-dark:   rgba(0, 0, 0, 0.7);
+    --overlay-darker: rgba(0, 0, 0, 0.85);
+
+    /* Primary adjustments for dark */
+    --primary-bg:     rgba(230, 81, 0, 0.15);
+
+    /* Green accent adjustments for dark */
+    --green-bg:       rgba(0, 200, 83, 0.1);
+
+    /* Shadows - darker, more subtle */
+    --shadow-xs:      0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-sm:      0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.15);
+    --shadow-md:      0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+    --shadow-lg:      0 12px 32px rgba(0, 0, 0, 0.35), 0 4px 8px rgba(0, 0, 0, 0.2);
+    --shadow-xl:      0 20px 48px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.25);
+    --shadow-card:    0 2px 8px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.15);
+    --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.3), 0 16px 48px rgba(0, 0, 0, 0.2);
+    --shadow-inset:   inset 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    /* Status colors - slightly lighter for dark mode */
+    --success-light:  rgba(39, 174, 96, 0.15);
+    --error-light:    rgba(231, 76, 60, 0.15);
+    --warning-light:  rgba(243, 156, 18, 0.15);
+    --info-light:     rgba(52, 152, 219, 0.15);
+
+    /* Component tokens */
+    --footer-bg:      #0D0D1A;
+  }
+}

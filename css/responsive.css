@@ -345,6 +345,40 @@
 
 
 /* ============================================================
+   LANDSCAPE SMALL SCREENS
+   ============================================================ */
+@media (max-height: 480px) and (orientation: landscape) {
+  .hero-slider {
+    min-height: 50vh;
+  }
+
+  .slide-title {
+    font-size: var(--text-2xl);
+  }
+
+  .page-hero {
+    height: 180px;
+  }
+}
+
+/* ============================================================
+   GALLERY FILTER TABS — MOBILE WRAPPING
+   ============================================================ */
+@media (max-width: 768px) {
+  .filter-tabs {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    padding-inline: var(--space-sm);
+  }
+
+  .filter-btn {
+    font-size: var(--text-xs);
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* ============================================================
    PRINT STYLES
    ============================================================ */
 

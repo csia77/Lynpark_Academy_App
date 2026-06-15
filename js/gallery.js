@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentImageIndex = 0;
     let visibleItems = []; // Track currently visible (filtered) items
+    let lastFocusedElement = null; // Track element that opened lightbox for focus restoration
 
     /**
      * Get all currently visible gallery items.
@@ -89,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * Open the lightbox with a specific image.
      */
     const openLightbox = (index) => {
+        lastFocusedElement = document.activeElement;
         visibleItems = getVisibleItems();
         currentImageIndex = index;
 
@@ -103,6 +105,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevent background scroll
+
+        // Move focus to close button for keyboard users
+        if (lightboxClose) {
+            setTimeout(() => lightboxClose.focus(), 100);
+        }
     };
 
     /**
@@ -111,6 +118,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeLightbox = () => {
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
+
+        // Restore focus to the element that opened the lightbox
+        if (lastFocusedElement && document.contains(lastFocusedElement)) {
+            lastFocusedElement.focus();
+            lastFocusedElement = null;
+        }
     };
 
     /**
@@ -142,6 +155,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const visible = getVisibleItems();
             const visibleIndex = visible.indexOf(item);
             openLightbox(visibleIndex);
+        });
+    });
+
+    // Keyboard activation for gallery items (Enter/Space)
+    galleryItems.forEach(item => {
+        item.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const visible = getVisibleItems();
+                const visibleIndex = visible.indexOf(item);
+                if (visibleIndex !== -1) {
+                    openLightbox(visibleIndex);
+                }
+            }
         });
     });
 

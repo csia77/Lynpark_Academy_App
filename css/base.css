@@ -375,3 +375,44 @@ blockquote cite {
   white-space: nowrap;
   border-width: 0;
 }
+
+/* ============================================================
+   DARK MODE BODY OVERRIDES
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+  }
+
+  /* Scrollbar dark mode */
+  ::-webkit-scrollbar-track {
+    background: #1A1A2E;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2D3748;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4A5568;
+  }
+
+  /* Selection */
+  ::selection {
+    background: rgba(230, 81, 0, 0.4);
+  }
+
+  /* Images brightness in dark mode */
+  img {
+    opacity: 0.92;
+  }
+
+  img:hover {
+    opacity: 1;
+  }
+}
